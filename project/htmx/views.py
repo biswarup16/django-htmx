@@ -9,16 +9,17 @@ def index(request):
 
 def search(request):
     username = request.POST.get('username')
+    print(username)
     mylist = ["apple", "banana", "cherry"]
 
-    for i in mylist:
-        if i == username:
+    # for i in mylist:
+    if username in mylist:
             # return HttpResponse('<div style="color:red">The Username is Already Exists</div>')
-            context={'obj':i}
-            print(i)
+            context={'obj':username}
+            # print(i + 'hello')
             return render(request,'search.html',context)
-        else:
-            return HttpResponse('<div style="color:green">The Username is Available</div>')
+    else:
+            return HttpResponse('<div style="color:red">The Fruit in Not Available</div>')       
 
 
     
