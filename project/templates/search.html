@@ -1,8 +1,10 @@
 <div>
 
-    {% if obj %}
+    {% if student_obj %}
     
-    <h1 class="mt-5 text-primary">{{obj}}</h1>
+    {% for student_obj in student_obj %}
+    <h1 class="mt-5 text-primary">{{student_obj.name}}</h1>
+    {% endfor %}
     {% endif %}
 
 </div>
